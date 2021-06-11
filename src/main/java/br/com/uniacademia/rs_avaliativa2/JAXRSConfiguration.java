@@ -8,7 +8,7 @@ import javax.ws.rs.core.Application;
  * Configures JAX-RS for the application.
  * @author Juneau
  */
-@ApplicationPath("resources")
+@ApplicationPath("service")
 public class JAXRSConfiguration extends Application {
     @Override
     public Set<Class<?>> getClasses() {
