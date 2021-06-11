@@ -65,4 +65,27 @@ public class ServiceFormatacao {
             return g.toJson("");
 	}
     }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get/cep={cep}")
+    public String formatarCEP(@PathParam("cep") String cep){
+        Gson g = new Gson();
+        try {
+            
+            if(cep.length() != 8){
+                return g.toJson("");
+            }
+            
+            Double.parseDouble(cep.trim()); //Evitar letras no cpf
+            
+            javax.swing.text.MaskFormatter mascara = new javax.swing.text.MaskFormatter("#####-###");
+            javax.swing.JFormattedTextField cepFormatado = new javax.swing.JFormattedTextField(mascara);
+           
+            cepFormatado.setText(cep);
+            return g.toJson(cepFormatado.getText());
+	} catch (Exception e) {
+            return g.toJson("");
+	}
+    }
 }
