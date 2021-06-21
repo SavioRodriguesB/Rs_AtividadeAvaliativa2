@@ -24,7 +24,5 @@ public class JAXRSConfiguration extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(br.com.uniacademia.rs_avaliativa2.service.ServiceCep.class);
-        resources.add(br.com.uniacademia.rs_avaliativa2.service.ServiceFormatacao.class);
     }
 }
